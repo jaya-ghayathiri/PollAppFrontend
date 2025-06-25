@@ -1,0 +1,142 @@
+:root {
+  --bg-main: #f0f4f8;
+  --bg-card: #ffffff;
+  --text-heading: #2e3a59;
+  --text-sub: #56677b;
+  --accent: #7f5af0;
+  --accent-light: #dcd4fb;
+
+  --clr-edit: #0f9d58;
+  --clr-edit-hover: #0b7d46;
+  --clr-delete: #d93025;
+  --clr-delete-hover: #b1271b;
+}
+
+/* Make full height available */
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+  background: var(--bg-main);
+}
+
+/* ——— FULL-VIEW, RESPONSIVE CONTAINER ——— */
+.mypolls-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;        /* center horizontally */
+  justify-content: flex-start; /* align top initially */
+  padding: clamp(1rem, 4vw, 3rem);
+  max-width: 1300px;
+  margin-inline: auto;
+  box-sizing: border-box;
+}
+
+/* ——— HEADLINE ——— */
+.mypolls-container h2 {
+  font-size: clamp(2rem, 4vw, 2.5rem);
+  font-weight: 700;
+  color: var(--text-heading);
+  margin-bottom: 2.5rem;
+  text-align: center;
+  position: relative;
+  width: 100%;
+  max-width: 700px;
+}
+
+.mypolls-container h2::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 4px;
+  background: var(--accent);
+  border-radius: 3px;
+  margin: 0.75rem auto 0;
+}
+
+/* ——— POLL GRID ——— */
+.poll-list {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  width: 100%;
+}
+
+/* ——— INDIVIDUAL CARD ——— */
+.poll-card {
+  background: var(--bg-card);
+  border-radius: 18px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+  padding: 1.5rem 1.6rem 1.8rem;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  border: 1px solid var(--accent-light);
+}
+
+.poll-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 35px rgba(0, 0, 0, 0.08);
+}
+
+.poll-card h3 {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+  color: var(--text-heading);
+}
+
+.poll-card ul {
+  padding-left: 1.2rem;
+  margin-bottom: 1.4rem;
+}
+
+.poll-card li {
+  color: var(--text-sub);
+  font-size: 0.95rem;
+  margin-bottom: 0.5rem;
+}
+
+/* ——— BUTTON GROUP ——— */
+.button-group {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.edit-btn,
+.delete-btn {
+  padding: 8px 14px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+  color: #fff;
+}
+
+.edit-btn {
+  background-color: var(--clr-edit);
+}
+.edit-btn:hover {
+  background-color: var(--clr-edit-hover);
+  transform: translateY(-1px);
+}
+
+.delete-btn {
+  background-color: var(--clr-delete);
+}
+.delete-btn:hover {
+  background-color: var(--clr-delete-hover);
+  transform: translateY(-1px);
+}
+
+/* ——— EMPTY STATE ——— */
+.mypolls-container > p {
+  text-align: center;
+  color: var(--text-sub);
+  font-size: 1rem;
+  margin-top: 2rem;
+}

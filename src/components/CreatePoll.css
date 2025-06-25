@@ -1,0 +1,90 @@
+.create-poll-container {
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 40px;
+  background-color: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.create-poll-container h2 {
+  text-align: center;
+  font-size: 26px;
+  color: #333;
+  margin-bottom: 25px;
+}
+
+.create-poll-container input[type="text"] {
+  width: 100%;
+  padding: 12px 15px;
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  font-size: 16px;
+  transition: border 0.2s ease;
+}
+
+.create-poll-container input[type="text"]:focus {
+  border-color: #4a90e2;
+  outline: none;
+  box-shadow: 0 0 3px rgba(74, 144, 226, 0.4);
+}
+
+.option-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.option-row input {
+  flex: 1;
+}
+
+.add-btn,
+.remove-btn,
+.submit-btn {
+  font-size: 14px;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.add-btn {
+  background-color: #5cb85c;
+  color: white;
+}
+
+.add-btn:hover {
+  background-color: #4cae4c;
+}
+
+.remove-btn {
+  background-color: #d9534f;
+  color: white;
+}
+
+.remove-btn:hover {
+  background-color: #c9302c;
+}
+
+.submit-btn {
+  width: 100%;
+  background-color: #007bff;
+  color: white;
+  margin-top: 20px;
+}
+
+.submit-btn:hover {
+  background-color: #0056b3;
+}
+
+h4 {
+  margin-top: 30px;
+  color: #444;
+  font-weight: 500;
+  font-size: 18px;
+}
