@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import './CreatePoll.css';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 
 function CreatePoll() {
@@ -53,6 +53,7 @@ const navigate = useNavigate();
 
   return (
     <div className="create-poll-container">
+      
       <h2>Create a Poll</h2>
       <form onSubmit={handleSubmit}>
         <input
@@ -89,6 +90,15 @@ const navigate = useNavigate();
 
         <br />
         <button type="submit" className="submit-btn">Create Poll</button>
+        <button
+  type="button"
+  onClick={() => navigate('/allpolls')}
+  className="submit-btn"
+  style={{ backgroundColor: '#7f5af0', marginTop: '1rem' }}
+>
+  🌍 View All Polls
+</button>
+
       </form>
     </div>
   );

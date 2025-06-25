@@ -26,6 +26,11 @@ function Auth() {
   };
 
   return (
+    <div className="auth-page">
+
+    
+
+    <div className="auth-image"></div>
   <div className="auth-container">
     <h2>{isRegister ? 'Register' : 'Login'}</h2>
     <form onSubmit={handleSubmit}>
@@ -48,6 +53,7 @@ function Auth() {
     <button onClick={() => setIsRegister(!isRegister)} className="auth-toggle">
       {isRegister ? 'Already have an account? Login' : 'New user? Register'}
     </button>
+  </div>
   </div>
 );
 

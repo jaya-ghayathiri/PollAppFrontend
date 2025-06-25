@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import axios from 'axios';
 import './MyPolls.css'
 function MyPolls() {
@@ -28,9 +29,19 @@ function MyPolls() {
     fetchPolls();
   }, [userId]);
   
-
+const handleDelete = async (id) => {
+    if (!window.confirm('Delete this poll?')) return;
+    try {
+      await axios.delete(`http://localhost:8000/polls/${id}`);
+      setPolls((prev) => prev.filter((p) => p._id !== id)); // remove locally
+      alert('Poll deleted');
+    } catch (err) {
+      alert(err.response?.data?.msg || 'Failed to delete poll');
+    }
+  };
    return (
     <div className="mypolls-container">
+      <Link to="/create">Back</Link>
       <h2>My Created Polls</h2>
       {polls.length === 0 ? (
         <p>No polls created yet.</p>

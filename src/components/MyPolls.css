@@ -11,7 +11,9 @@
   --clr-delete: #d93025;
   --clr-delete-hover: #b1271b;
 }
-
+.items{
+  list-style-type: none;
+}
 /* Make full height available */
 html,
 body,
